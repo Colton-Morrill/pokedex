@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokémon Index</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <div class="page-container flex">
+      <h1>The Pokémon Index</h1>
+      <span>
+        <p>Powered by Poké API</p>
+      </span>
+    </div>
+  </header>
+
+  <svg class="background-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="yellowGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#ffe781" />
+        <stop offset="100%" stop-color="#fbd44c" />
+      </linearGradient>
+    </defs>
+    <polygon fill="url(#yellowGrad)" points="0,0 100,0 100,80 0,100" />
+  </svg>
+
+  <section class="page-wrapper">
+    <div class="logo-container page-container">
+      <img src="assets/poke-logo.png" alt="Pokémon Logo" class="logo">
+    </div>
+    <main id="pokemon-container" aria-live="polite">
+      <!-- Cards Loaded In Here -->
+    </main>
+  </section>
+  <footer class="control-footer">
+    <div class="page-container flex">
+      <button class="" id="settings-btn">
+        <svg class="more-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+          viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="5" cy="12" r="2" />
+          <circle cx="12" cy="12" r="2" />
+          <circle cx="19" cy="12" r="2" />
+        </svg>
+      </button>
+      <div class="card-selector">
+        <span>Show</span>
+        <select id="card-count-desktop" class="card-count">
+          <option value="10" selected>10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+        </select>
+        <span>cards per page</span>
+      </div>
+      <div>
+        <button id="prev-button" class="disabled" onclick="prevPage()">Previous Page</button>
+        <button onclick="nextPage()">Next Page</button>
+      </div>
+    </div>
+  </footer>
+  <div id="settings-popup" class="hidden">
+    <div class="popup-content">
+      <div>
+        <select id="card-count-mobile" class="card-count">
+          <option value="10" selected>10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+        </select>
+        <span>cards per page</span>
+      </div>
+      <button class="" id="close-settings">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <script type="module" src="scripts/main.js"></script>
+</body>
+
+</html>

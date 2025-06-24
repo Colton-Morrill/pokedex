@@ -1,0 +1,370 @@
+/* ===== Global Styles ===== */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #f2f2f2;
+  position: relative;
+}
+
+.background-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  z-index: -1;
+  display: block;
+}
+
+/* ===== Utility Classes ===== */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ===== Layout Containers ===== */
+.page-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.page-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+/* ===== Header ===== */
+.header {
+  background: #FFCB0580;
+  color: #C59C00;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+  z-index: 10;
+}
+
+.header h1 {
+  font-size: 18px;
+}
+
+.header span {
+  background: linear-gradient(to bottom, #ECBF14, #DCB41C);
+  border-radius: 50px;
+  color: #FFEDA6;
+  display: block;
+  font-size: 14px;
+  padding: 0.75rem;
+  width: 200px;
+}
+
+.header span p {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Pokemon Cards ===== */
+#pokemon-container {
+  box-sizing: border-box;
+  display: grid;
+  gap: 2rem 1rem;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 1rem;
+  padding-bottom: 150px;
+}
+
+.pokemon-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-width: 135px;
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+}
+
+.pokemon-card img {
+  width: 96px;
+  height: 96px;
+}
+
+.pokedex-numb {
+  align-items: center;
+  background-color: #3B5CA7;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  font-size: 0.9rem;
+  font-weight: bold;
+  height: 30px;
+  justify-content: center;
+  left: 50%;
+  position: absolute;
+  top: -30px;
+  transform: translateX(-50%);
+  width: 30px;
+}
+
+/* ===== Control Footer ===== */
+.control-footer {
+  align-items: center;
+  background: rgba(224, 228, 240, 0.74);
+  backdrop-filter: blur(10.9px);
+  border: 1px solid rgba(224, 228, 240, 0.3);
+  bottom: 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: 2.5rem 1rem;
+  position: fixed;
+  right: 0;
+  z-index: 10;
+}
+
+.control-footer span {
+  color: #2d6db7;
+  font-size: 18px;
+}
+
+.control-footer button {
+  background: linear-gradient(to bottom, #6584bd, #4464ad);
+  border: 2px solid #3B5CA7;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  padding: 0.5rem 1rem;
+}
+
+.control-footer button:hover {
+  cursor: pointer;
+}
+
+.control-footer button.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ===== Settings Button & Popup ===== */
+#settings-btn {
+  align-items: center;
+  background: none !important;
+  display: none;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+#settings-btn svg {
+  color: #3e5da7;
+}
+
+#settings-popup {
+  align-items: center;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  position: fixed;
+}
+
+.popup-content {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: blur(14.1px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  bottom: 62px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0.75rem;
+  position: fixed;
+  width: 100%;
+}
+
+.popup-content span {
+  color: #2d6db7;
+  font-size: 18px;
+}
+
+#close-settings {
+  align-items: center;
+  background: none !important;
+  border: 2px solid #3B5CA7;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+#close-settings svg {
+  color: #3e5da7;
+}
+
+/* ===== Loading and Error ===== */
+.loading-box,
+.error-message {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  grid-column: span 5;
+  justify-content: center;
+  width: 100%;
+}
+
+.loading-box img {
+  width: 47px;
+}
+
+.loading-box p {
+  background: #f8df7b;
+  border: 2px solid #2d6db7;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #2d6db7;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
+.error-message p {
+  color: #2d6db7;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ===== Skeleton Loader ===== */
+.skeleton {
+  background: #f2f2f2;
+  grid-column: span 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.skeleton::after {
+  animation: shimmer 1.5s infinite;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  content: '';
+  height: 100%;
+  left: -150px;
+  position: absolute;
+  top: 0;
+  width: 100px;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+.skeleton-img {
+  background: #ddd;
+  border-radius: 8px;
+  height: 96px;
+  margin: 0 auto;
+  width: 96px;
+}
+
+.skeleton-text {
+  background: #ddd;
+  border-radius: 4px;
+  height: 1rem;
+  margin: 1rem auto 0;
+  width: 60%;
+}
+
+.skeleton-badge {
+  background: #ccc;
+  box-shadow: none;
+  top: -30px;
+}
+
+/* ===== Select Input ===== */
+.card-count {
+  background: transparent;
+  border: 2px solid #2d6db7;
+  border-radius: 5px;
+  color: #2d6db7;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.card-count:focus {
+  border: 2px solid #2d6db7;
+}
+
+.card-count:focus-visible {
+  outline: none;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 600px) {
+  .header {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .header span {
+    display: none;
+  }
+
+  .logo-container {
+    margin: 20px 0;
+    padding: 0;
+  }
+
+  .logo-container img {
+    height: auto;
+    padding: 2rem;
+    width: 70%;
+  }
+
+  #pokemon-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    padding: 2rem;
+    padding-bottom: 175px;
+  }
+
+  .pokemon-card {
+    min-width: auto;
+  }
+
+  .pokemon-card img {
+    height: 80px;
+    width: 80px;
+  }
+
+  .control-footer {
+    padding: 0.5rem;
+  }
+
+  .card-selector,
+  .card-selector span {
+    display: none;
+  }
+
+  #settings-btn {
+    display: flex;
+  }
+}
