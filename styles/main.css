@@ -237,8 +237,8 @@ body {
 
 .loading-box p {
   background: #f8df7b;
-  border: 2px solid #2d6db7;
-  border-radius: 15px;
+  border: 1px solid #2d6db7;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   color: #2d6db7;
   font-size: 18px;
@@ -256,8 +256,6 @@ body {
 /* ===== Skeleton Loader ===== */
 .skeleton {
   background: #f2f2f2;
-  grid-column: span 1;
-  overflow: hidden;
   position: relative;
 }
 
@@ -269,7 +267,6 @@ body {
   left: -150px;
   position: absolute;
   top: 0;
-  width: 100px;
 }
 
 @keyframes shimmer {
@@ -294,11 +291,6 @@ body {
   width: 60%;
 }
 
-.skeleton-badge {
-  background: #ccc;
-  box-shadow: none;
-  top: -30px;
-}
 
 /* ===== Select Input ===== */
 .card-count {
@@ -340,10 +332,15 @@ body {
     width: 70%;
   }
 
+  .loading-box {
+    grid-column: span 2;
+  }
+
   #pokemon-container {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
     padding: 2rem;
     padding-bottom: 175px;
+    margin: 0 auto
   }
 
   .pokemon-card {

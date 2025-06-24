@@ -31,7 +31,6 @@ function showSkeletonLoader(count = 10) {
 
   const skeletonCard = `
     <div class="pokemon-card skeleton">
-      <div class="pokedex-numb skeleton-badge"></div>
       <div class="skeleton-img"></div>
       <div class="skeleton-text"></div>
     </div>
@@ -47,7 +46,6 @@ async function fetchPokemonList() {
   try {
     const res = await fetch(`${API_POKE}?limit=${limit}&offset=${offset}`);
     const data = await res.json();
-
     const detailedData = await Promise.all(
       data.results.map((p) => fetch(p.url).then((r) => r.json()))
     );
