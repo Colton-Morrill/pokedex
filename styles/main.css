@@ -65,13 +65,13 @@ body {
 
 .header span {
   background: linear-gradient(to bottom, #ECBF14, #DCB41C);
-  border-radius: 50px;
+  border-radius: 10px;
   color: #FFEDA6;
   display: block;
   font-size: 14px;
   padding: 0.75rem;
   width: 200px;
-  box-shadow: inset 0 0 10px #bda555;
+  box-shadow: inset 0 0 15px #81713c;
 }
 
 .header span p {
@@ -181,7 +181,7 @@ body {
 
 #settings-popup {
   align-items: center;
-  display: flex;
+  display: none;
   inset: 0;
   justify-content: center;
   position: fixed;
@@ -351,6 +351,10 @@ body {
   .pokemon-card img {
     height: 80px;
     width: 80px;
+  }
+
+  #settings-popup {
+    display: flex;
   }
 
   .control-footer {

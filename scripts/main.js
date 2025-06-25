@@ -12,7 +12,7 @@ const mobileSelect = document.getElementById("card-count-mobile");
 const API_POKE = "https://pokeapi.co/api/v2/pokemon";
 
 // STATE
-let limit = parseInt(desktopSelect.value); // Pokémon per page
+let limit = parseInt(desktopSelect.value);
 let offset = 0;
 
 // UTILITIES
@@ -41,8 +41,7 @@ function showSkeletonLoader(count = 10) {
 
 // FETCH DATA
 async function fetchPokemonList() {
-  showSkeletonLoader(limit); // Show skeleton loader while fetching
-
+  showSkeletonLoader(limit);
   try {
     const res = await fetch(`${API_POKE}?limit=${limit}&offset=${offset}`);
     const data = await res.json();
@@ -71,7 +70,9 @@ function renderCards(pokemonArray) {
     card.className = "pokemon-card";
     card.innerHTML = `
       <p class="pokedex-numb">${pokemon.id}</p>
-      <img src="${pokemon.sprites.front_default || "assets/placeholder.svg"}" alt="${pokemon.name}" />
+      <img src="${
+        pokemon.sprites.front_default || "assets/placeholder.png"
+      }" alt="${pokemon.name}" />
       <h3>${capitalize(pokemon.name)}</h3>
     `;
     container.appendChild(card);
@@ -105,8 +106,7 @@ closeSettings.addEventListener("click", () => {
 function onCardCountChange(e) {
   limit = parseInt(e.target.value);
   offset = 0;
-
-  // Sync both selects
+  prevButton.classList.toggle("disabled", offset === 0);
   const syncedValue = e.target.value;
   desktopSelect.value = syncedValue;
   mobileSelect.value = syncedValue;
